@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Stoke:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Stoke', serif;
+}
+
+.App {
+  /* text-align: center; */
+}
+
+.main {
+  display: flex;
+
+  .destaques {
+    background-color: ghostwhite;
+    width: 20vw;
+    min-height: 75vh;
+  }
+}
