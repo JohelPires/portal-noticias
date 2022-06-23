@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Stoke:wght@300;400&display=swap');
 
 $text-color: rgba(0, 0, 0, 0.9);
-$text-font-size: 1.5vw;
-$big-font-size: 2.5vw;
-$tiny-font-size: 1vw;
+// $text-font-size: 1.5vw;
+$big-font-size: clamp(16px, 2.5vw, 22px);
+$tiny-font-size: clamp(9px, 1vw, 16px);
 $letter-spacing: 0.1rem;
 
 body {
@@ -17,6 +17,9 @@ body {
     margin: 0;
     letter-spacing: 0.05rem;
     line-height: 1.8rem;
+  }
+  h4 {
+    margin: 0;
   }
   p {
     font-size: 1.5vw;
@@ -40,8 +43,9 @@ body {
   display: flex;
 
   .destaques {
-    border-radius: 7px;
+    border-radius: 5px;
     margin: 20px;
+    margin-right: 0;
     padding: 15px;
     padding-top: 0;
     background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
@@ -89,7 +93,7 @@ body {
         word-wrap: break-word;
         border: 1px solid lightgray;
         border-radius: 5px;
-        padding: 0px 20px;
+        padding: 10px 20px;
         box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
         // width: 41%;
       }
@@ -98,8 +102,17 @@ body {
 }
 
 .tempo {
-  padding: 10px;
-  background-color: white;
+  border-radius: 5px;
+  margin: 20px;
+  margin-left: 0;
+  padding: 15px;
+  padding-top: 0;
+  // background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
+  box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
+  // color: white;
   width: 20vw;
   min-height: 75vh;
+  max-height: 100vh;
+  font-weight: 300;
+  overflow-y: hidden;
 }

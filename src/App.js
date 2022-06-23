@@ -2,18 +2,13 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import Destaques from './components/Destaques'
 import Principal from './components/Principal'
+import Tempo from './components/Tempo'
 
 function App() {
   console.clear()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [noticias, setNoticias] = useState(null)
-
-  // useEffect(() => {
-  //   fetch('http://servicodados.ibge.gov.br/api/v3/noticias/?de=06-01-2022')
-  //     .then((response) => response.json())
-  //     .then((data) => setNoticiasDoMes(data))
-  // }, [])
 
   useEffect(() => {
     fetch(
@@ -55,7 +50,7 @@ function App() {
 
         {loading ? <h2>loading</h2> : <Principal noticias={noticias} />}
 
-        <div className='tempo'>Previsão do tempo</div>
+        <Tempo />
       </main>
       <footer>footer</footer>
     </div>
