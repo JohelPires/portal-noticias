@@ -14,8 +14,28 @@ body {
   display: flex;
 
   .destaques {
+    padding: 10px;
     background-color: ghostwhite;
     width: 20vw;
     min-height: 75vh;
+    h2 {
+      font-size: 2vw;
+    }
+  }
+
+  .principal {
+    width: 60vw;
+    margin: 20px;
+
+    .headline {
+      height: 200px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 0 10px;
+      // background-color: lightgreen;
+      h1 {
+        font-size: 2.5vw;
+      }
+    }
   }
 }
