@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=br&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+      `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&apiKey=c0b36feefa3d4496af378b1abd24f58c`
     )
       .then((response) => {
         if (!response.ok) {
@@ -44,8 +44,12 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='header'>Portal Notícias</header>
+      <header className='header'>
+        <h1>Portal Notícias</h1>
+        <p>Algumas frases de impacto aqui scrollando</p>
+      </header>
       <nav>some links</nav>
+      <div className='acoes'>nasdaq, bovespa, bitcoin, etc</div>
       <main className='main'>
         {loading ? <h2>loading</h2> : <Destaques noticias={noticias} />}
 

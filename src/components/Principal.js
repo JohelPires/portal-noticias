@@ -14,7 +14,7 @@ function Principal({ noticias }) {
   })
   return (
     <div className='principal'>
-      notícias principais:
+      {/* notícias principais: */}
       <div className='headline'>
         <h1>{noticias.articles[0].title}</h1>
         <p className='author'>por: {noticias.articles[0].author}</p>

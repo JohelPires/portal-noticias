@@ -4,11 +4,13 @@ $text-color: rgba(0, 0, 0, 0.9);
 $text-font-size: 1.5vw;
 $big-font-size: 2.5vw;
 $tiny-font-size: 1vw;
+$letter-spacing: 0.1rem;
 
 body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Stoke', serif;
+  background-color: ghostwhite;
 
   h1 {
     font-size: $big-font-size;
@@ -25,6 +27,11 @@ body {
   }
 }
 
+.header {
+  text-align: center;
+  margin-top: 15px;
+}
+
 .App {
   /* text-align: center; */
 }
@@ -33,12 +40,23 @@ body {
   display: flex;
 
   .destaques {
-    padding: 10px;
-    background-color: ghostwhite;
+    border-radius: 7px;
+    margin: 20px;
+    padding: 15px;
+    padding-top: 0;
+    background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
+    box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
+    color: white;
     width: 20vw;
     min-height: 75vh;
+    max-height: 100vh;
+    font-weight: 300;
+    overflow-y: hidden;
     h2 {
       font-size: 2vw;
+    }
+    h5 {
+      letter-spacing: $letter-spacing;
     }
   }
 
@@ -53,23 +71,35 @@ body {
 
     .headline {
       // height: 250px;
+      background-color: white;
       border: 1px solid lightgray;
       border-radius: 5px;
       padding: 20px;
       margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
       // background-color: lightgreen;
     }
 
     .outras-container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+
       gap: 10px;
       .outras {
+        background-color: white;
+        word-wrap: break-word;
         border: 1px solid lightgray;
         border-radius: 5px;
         padding: 0px 20px;
-        // width: 45%;
+        box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
+        // width: 41%;
       }
     }
   }
+}
+
+.tempo {
+  padding: 10px;
+  background-color: white;
+  width: 20vw;
+  min-height: 75vh;
 }
