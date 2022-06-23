@@ -1,9 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Stoke:wght@300;400&display=swap');
 
+$text-color: rgba(0, 0, 0, 0.9);
+$text-font-size: 1.5vw;
+$big-font-size: 2.5vw;
+$tiny-font-size: 1vw;
+
 body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Stoke', serif;
+
+  h1 {
+    font-size: $big-font-size;
+    margin: 0;
+    letter-spacing: 0.05rem;
+    line-height: 1.8rem;
+  }
+  p {
+    font-size: 1.5vw;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    line-height: 1.6rem;
+    color: $text-color;
+  }
 }
 
 .App {
@@ -27,14 +46,29 @@ body {
     width: 60vw;
     margin: 20px;
 
+    .author {
+      margin: 0;
+      font-size: $tiny-font-size;
+    }
+
     .headline {
-      height: 200px;
+      // height: 250px;
       border: 1px solid lightgray;
       border-radius: 5px;
-      padding: 0 10px;
+      padding: 20px;
+      margin-bottom: 10px;
       // background-color: lightgreen;
-      h1 {
-        font-size: 2.5vw;
+    }
+
+    .outras-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      .outras {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 0px 20px;
+        // width: 45%;
       }
     }
   }
