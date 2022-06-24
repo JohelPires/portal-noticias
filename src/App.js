@@ -14,6 +14,42 @@ function App() {
   const [error, setError] = useState(null)
   const [noticias, setNoticias] = useState(null)
 
+  // escreve a data por extenso:
+  const hoje = new Date()
+  const semana = [
+    'Segunda-feira',
+    'Terça-feira',
+    'Quarta-feira',
+    'Quinta-feira',
+    'Sexta-feira',
+    'Sábado',
+    'Domingo',
+  ]
+  const mes = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+  ]
+  const hojeStr =
+    semana[hoje.getDay() - 1] +
+    ', ' +
+    hoje.getDate() +
+    ' de ' +
+    mes[hoje.getMonth() - 1] +
+    ' de ' +
+    hoje.getFullYear()
+
+  // pega as notícias:
+
   useEffect(() => {
     fetch(
       `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&apiKey=c0b36feefa3d4496af378b1abd24f58c`
@@ -44,7 +80,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header />
+        <Header hojeStr={hojeStr} />
         <SearchBar />
         {/* <div className='acoes'>nasdaq, bovespa, bitcoin, etc</div> */}
         <Routes>
