@@ -3,7 +3,7 @@
 $text-color: rgba(0, 0, 0, 0.9);
 // $text-font-size: 1.5vw;
 $big-font-size: clamp(16px, 2.5vw, 22px);
-$tiny-font-size: clamp(9px, 1vw, 16px);
+$tiny-font-size: clamp(9px, 1vw, 11px);
 $letter-spacing: 0.1rem;
 
 body {
@@ -22,11 +22,22 @@ body {
     margin: 0;
   }
   p {
-    font-size: 1.5vw;
+    font-size: 0.8rem;
     font-weight: 300;
     letter-spacing: 0.1rem;
-    line-height: 1.6rem;
+    line-height: 1.5rem;
     color: $text-color;
+  }
+  a {
+    padding: 1px 3px;
+    text-decoration: none;
+    color: $text-color;
+    // background-color: gray;
+
+    &:hover {
+      color: white;
+      background-color: red;
+    }
   }
 }
 
@@ -64,23 +75,34 @@ body {
     }
   }
 
+  .img-small-container {
+    height: 120px;
+    width: 400px;
+    overflow: hidden;
+  }
+  .img-small {
+    height: 100%;
+  }
+
   .principal {
     width: 60vw;
     margin: 20px;
 
     .author {
       margin: 0;
+      padding: 0;
       font-size: $tiny-font-size;
     }
 
     .headline {
       // height: 250px;
-      background-color: white;
-      border: 1px solid lightgray;
-      border-radius: 5px;
+      // background-color: white;
+      border-top: 3px solid red;
+      border-bottom: 3px solid red;
+      // border-radius: 15px;
       padding: 20px;
       margin-bottom: 10px;
-      box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
+      // box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
       // background-color: lightgreen;
     }
 
@@ -89,13 +111,20 @@ body {
 
       gap: 10px;
       .outras {
-        background-color: white;
+        // display: flex;
+        // background-color: white;
         word-wrap: break-word;
-        border: 1px solid lightgray;
-        border-radius: 5px;
+        border-bottom: 1px solid gray;
+        // border-radius: 5px;
         padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
+        // border-bottom: ;
+        // box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
         // width: 41%;
+
+        .head-of-article {
+          display: flex;
+          gap: 10px;
+        }
       }
     }
   }
