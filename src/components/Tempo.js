@@ -5,6 +5,8 @@ function Tempo() {
   const [error, setError] = useState(null)
   const [tempo, setTempo] = useState(null)
 
+  const hoje = new Date()
+
   const url =
     'https://api.open-meteo.com/v1/forecast?latitude=-15.7801&longitude=-47.9292&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=America%2FSao_Paulo'
 
@@ -18,13 +20,19 @@ function Tempo() {
         }
         return response.json()
       })
-      .then((actualData) => console.log(actualData))
+      .then((actualData) => setTempo(actualData))
       .catch((err) => {
         console.log(err.message)
       })
   }, [])
 
-  console.log(tempo)
+  const minArr = tempo.daily.temperature_2m_min
+  const maxArr = tempo.daily.temperature_2m_max
+
+  console.log('minima: ' + minArr[minArr.length - 1])
+  console.log('minima: ' + minArr[minArr.length - 1])
+  console.log(tempo.daily.precipitation_sum)
+  console.log(hoje.getDay())
   return (
     <div className='tempo'>
       <h2>Tempo</h2>

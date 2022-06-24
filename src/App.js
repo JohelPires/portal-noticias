@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Destaques from './components/Destaques'
-import Principal from './components/Principal'
-import Tempo from './components/Tempo'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import SearchBar from './components/SearchBar'
+import Article from './pages/Article'
+
+import Home from './pages/Home'
 
 function App() {
   console.clear()
@@ -38,22 +42,22 @@ function App() {
   console.log(noticias)
 
   return (
-    <div className='App'>
-      <header className='header'>
-        <h1>Portal Notícias</h1>
-        <p>Algumas frases de impacto aqui scrollando</p>
-      </header>
-      <nav>some links</nav>
-      <div className='acoes'>nasdaq, bovespa, bitcoin, etc</div>
-      <main className='main'>
-        {loading ? <h2>loading</h2> : <Destaques noticias={noticias} />}
-
-        {loading ? <h2>loading</h2> : <Principal noticias={noticias} />}
-
-        <Tempo />
-      </main>
-      <footer>footer</footer>
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Header />
+        <SearchBar />
+        {/* <div className='acoes'>nasdaq, bovespa, bitcoin, etc</div> */}
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={<Home loading={loading} noticias={noticias} />}
+          />
+          <Route path='/article' element={<Article />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

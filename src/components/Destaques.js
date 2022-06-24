@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Destaques({ noticias }) {
-  const titulos = noticias.articles.map((item) => {
+  const titulos = noticias.articles.map((item, idx) => {
     return (
-      <div className='itens-do-menu-lateral link'>
+      <div key={idx} className='itens-do-menu-lateral link'>
         <h5>{item.source.name}</h5>
       </div>
     )
