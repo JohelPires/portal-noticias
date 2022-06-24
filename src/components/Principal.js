@@ -28,7 +28,7 @@ function Principal({ noticias }) {
           </div>
           <p>{item.description}</p>
           <p className='author'>
-            Fonte: <a href='{item.url}'> {item.source.name}</a>
+            Fonte: <a href={item.url}> {item.source.name}</a>
           </p>
         </div>
       )
@@ -39,35 +39,36 @@ function Principal({ noticias }) {
       <div className='headline'>
         <div className='head-of-article'>
           {noticias.articles[0].urlToImage && (
-            <div className='img-small-container'>
+            <div className='img-headline-container'>
               <img
-                className='img-small'
+                className='img-headline'
                 src={noticias.articles[0].urlToImage}
                 alt={noticias.articles[0].title}
               />
             </div>
           )}
           <div>
-            <h4>{noticias.articles[0].title}</h4>
+            <h1>{noticias.articles[0].title}</h1>
             <p className='author'>
               por:{' '}
               {noticias.articles[0].author
                 ? noticias.articles[0].author
-                : 'autor desconhecido'}
-            </p>
-            <p className='author'>
-              {noticias.articles[0].publishedAt &&
-                `publicado em: ${noticias.articles[0].publishedAt.slice(
-                  0,
-                  10
-                )}`}
+                : 'autor desconhecido'}{' '}
+              -{' '}
+              <span className='author'>
+                {noticias.articles[0].publishedAt &&
+                  `publicado em: ${noticias.articles[0].publishedAt.slice(
+                    0,
+                    10
+                  )}`}
+              </span>
             </p>
           </div>
         </div>
         <p>{noticias.articles[0].description}</p>
         <p className='author'>
           Fonte:{' '}
-          <a href='{noticias.articles[0].url}'>
+          <a href={noticias.articles[0].url}>
             {' '}
             {noticias.articles[0].source.name}
           </a>

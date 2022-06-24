@@ -2,13 +2,16 @@ import React from 'react'
 
 function Destaques({ noticias }) {
   const titulos = noticias.articles.map((item) => {
-    return <h5>{item.title}</h5>
-    console.log(item)
+    return (
+      <div className='itens-do-menu-lateral link'>
+        <h5>{item.source.name}</h5>
+      </div>
+    )
   })
 
   return (
     <div className='destaques'>
-      <h2>Destaques</h2>
+      <h2>Fonte</h2>
       {titulos}
     </div>
   )

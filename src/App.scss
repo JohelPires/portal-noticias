@@ -5,6 +5,7 @@ $text-color: rgba(0, 0, 0, 0.9);
 $big-font-size: clamp(16px, 2.5vw, 22px);
 $tiny-font-size: clamp(9px, 1vw, 11px);
 $letter-spacing: 0.1rem;
+$primary-color: red;
 
 body {
   margin: 0;
@@ -17,6 +18,9 @@ body {
     margin: 0;
     letter-spacing: 0.05rem;
     line-height: 1.8rem;
+  }
+  h2 {
+    text-align: center;
   }
   h4 {
     margin: 0;
@@ -36,8 +40,28 @@ body {
 
     &:hover {
       color: white;
-      background-color: red;
+      background-color: $primary-color;
     }
+  }
+}
+.itens-do-menu-lateral {
+  border-bottom: 1px dotted gray;
+  padding: 0;
+  margin-right: 20px;
+  h5 {
+    padding: 0;
+    margin: 10px;
+  }
+}
+.link {
+  padding: 1px 3px;
+  text-decoration: none;
+  color: $text-color;
+  // background-color: gray;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    background-color: $primary-color;
   }
 }
 
@@ -54,17 +78,17 @@ body {
   display: flex;
 
   .destaques {
-    border-radius: 5px;
-    margin: 20px;
-    margin-right: 0;
-    padding: 15px;
+    // border-radius: 5px;
+    border-right: 1px dotted gray;
+    margin: 0;
+    padding: 0px;
     padding-top: 0;
-    background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
-    box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
-    color: white;
+    // background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
+    // box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
+    // color: white;
     width: 20vw;
     min-height: 75vh;
-    max-height: 100vh;
+    // max-height: 100vh;
     font-weight: 300;
     overflow-y: hidden;
     h2 {
@@ -79,9 +103,19 @@ body {
     height: 120px;
     width: 400px;
     overflow: hidden;
+    .img-small {
+      height: 100%;
+    }
   }
-  .img-small {
-    height: 100%;
+  .img-headline-container {
+    background-color: aquamarine;
+    height: 300px;
+    // width: 400px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    .img-headline {
+      width: 100%;
+    }
   }
 
   .principal {
@@ -97,8 +131,8 @@ body {
     .headline {
       // height: 250px;
       // background-color: white;
-      border-top: 3px solid red;
-      border-bottom: 3px solid red;
+      border-top: 3px solid $primary-color;
+      border-bottom: 3px solid $primary-color;
       // border-radius: 15px;
       padding: 20px;
       margin-bottom: 10px;
@@ -114,7 +148,7 @@ body {
         // display: flex;
         // background-color: white;
         word-wrap: break-word;
-        border-bottom: 1px solid gray;
+        border-bottom: 1px dotted black;
         // border-radius: 5px;
         padding: 10px 20px;
         // border-bottom: ;
@@ -131,13 +165,13 @@ body {
 }
 
 .tempo {
-  border-radius: 5px;
-  margin: 20px;
-  margin-left: 0;
+  // border-radius: 5px;
+  margin: 0;
+
   padding: 15px;
   padding-top: 0;
   // background: linear-gradient(45deg, rgb(30, 110, 185), rgb(2, 175, 218));
-  box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
+  // box-shadow: 0 5px 9px rgba(128, 128, 128, 0.5);
   // color: white;
   width: 20vw;
   min-height: 75vh;
