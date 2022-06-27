@@ -53,7 +53,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+      `https://newsapi.org/v2/top-headlines?country=br&pageSize=25&apiKey=c0b36feefa3d4496af378b1abd24f58c`
     )
       .then((response) => {
         if (!response.ok) {

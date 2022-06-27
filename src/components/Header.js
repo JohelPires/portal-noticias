@@ -30,9 +30,8 @@ function Header({ hojeStr }) {
 
   return (
     <header className='header'>
-      <Link to='/'>
-        <h1>Portal Notícias</h1>
-      </Link>
+      <h1>Portal Notícias</h1>
+
       <p className='subtitle'>Algumas frases de impacto aqui scrollando</p>
       <p>{hojeStr}</p>
     </header>

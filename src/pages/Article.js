@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Article({ article }) {
-  console.log(article)
+  // console.log(article)
   return (
     <div>
       <Link to='/'>Voltar</Link>

@@ -39,7 +39,7 @@ function Principal({ noticias, setArticle }) {
   const navigate = useNavigate()
 
   function openArticle(clickedArticle) {
-    console.log(clickedArticle.url)
+    // console.log(clickedArticle.url)
     window.open(clickedArticle.url, '_blank')
   }
 
