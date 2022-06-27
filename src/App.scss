@@ -91,6 +91,16 @@ body {
   background-color: lightgray;
   height: 35px;
   margin-bottom: 10px;
+  color: gray;
+  .searchInput {
+    margin: 0 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 .main {
   display: flex;
