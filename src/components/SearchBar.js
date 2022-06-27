@@ -37,7 +37,7 @@ function SearchBar({ setNoticias, setError, setLoading }) {
 
   function updateNews() {
     // console.log(search)
-    const novaUrl = `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&q=${search}&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+    const novaUrl = `https://newsapi.org/v2/top-headlines?country=br&pageSize=25&q=${search}&apiKey=c0b36feefa3d4496af378b1abd24f58c`
     setUrl(novaUrl)
   }
 
