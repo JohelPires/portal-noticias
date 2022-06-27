@@ -88,7 +88,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: lightgray;
+  // background-color: lightgray;
+  border: 1px solid lightgray;
+  // background-color: red;
   height: 35px;
   margin-bottom: 10px;
   color: gray;
@@ -100,6 +102,9 @@ body {
     &:focus {
       outline: none;
     }
+  }
+  .searchIcon {
+    cursor: pointer;
   }
 }
 .main {
@@ -164,6 +169,7 @@ body {
       // border-radius: 15px;
       padding: 20px;
       margin-bottom: 10px;
+      cursor: pointer;
       // box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
       // background-color: lightgreen;
     }
@@ -179,6 +185,7 @@ body {
         border-bottom: 1px dotted black;
         // border-radius: 5px;
         padding: 10px 20px;
+        cursor: pointer;
         // border-bottom: ;
         // box-shadow: 0 2px 5px rgba(128, 128, 128, 0.2);
         // width: 41%;

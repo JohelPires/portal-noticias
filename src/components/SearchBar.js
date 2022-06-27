@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
-function SearchBar({ noticias, setNoticias, setError, setLoading }) {
+function SearchBar({ setNoticias, setError, setLoading }) {
   const [search, setSearch] = useState('')
   const [url, setUrl] = useState(
     `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&apiKey=c0b36feefa3d4496af378b1abd24f58c`
@@ -46,7 +46,7 @@ function SearchBar({ noticias, setNoticias, setError, setLoading }) {
       updateNews()
     }
   }
-  console.log(noticias.totalResults)
+  // console.log(noticias.totalResults)
   return (
     <div className='searchBar'>
       <input
@@ -57,7 +57,7 @@ function SearchBar({ noticias, setNoticias, setError, setLoading }) {
         onChange={(e) => handleSearch(e)}
         onKeyDown={(e) => handleEnter(e)}
       ></input>
-      <FaSearch onClick={updateNews} />
+      <FaSearch onClick={updateNews} className='searchIcon' />
       {/* <p>{hojeStr}</p> */}
     </div>
   )

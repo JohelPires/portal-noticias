@@ -1,10 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Principal({ noticias }) {
   const restOfNews = noticias.articles.map((item, idx) => {
     if (idx > 0) {
       return (
-        <div key={idx} className='outras'>
+        <div key={idx} onClick={() => openArticle(item)} className='outras'>
           <div className='head-of-article'>
             {item.urlToImage && (
               <div className='img-small-container'>
@@ -35,9 +36,19 @@ function Principal({ noticias }) {
     }
   })
 
+  const navigate = useNavigate()
+
+  function openArticle(article) {
+    console.log(article)
+    navigate('/article')
+  }
+
   return (
     <div className='principal'>
-      <div className='headline'>
+      <div
+        onClick={() => openArticle(noticias.articles[0])}
+        className='headline'
+      >
         <div className='head-of-article'>
           {noticias.articles[0].urlToImage && (
             <div className='img-headline-container'>

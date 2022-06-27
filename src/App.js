@@ -80,7 +80,7 @@ function App() {
       <div className='App'>
         <Header hojeStr={hojeStr} />
         <SearchBar
-          noticias={noticias}
+          // noticias={noticias}
           setNoticias={setNoticias}
           setError={setError}
           setLoading={setLoading}
