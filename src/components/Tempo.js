@@ -32,14 +32,6 @@ function Tempo() {
       })
   }, [])
 
-  //   console.log(
-  //     tempo.daily.temperature_2m_min[tempo.daily.temperature_2m_min.length - 1]
-  //   )
-  //   const maxima =
-  //     tempo.daily.temperature_2m_max[tempo.daily.temperature_2m_max.length - 1]
-  //   const precipitation =
-  //     tempo.daily.precipitation_sum[tempo.daily.precipitation_sum.length - 1]
-
   return (
     <div className='tempo'>
       <h2>Tempo</h2>
