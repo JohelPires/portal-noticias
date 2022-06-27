@@ -13,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [noticias, setNoticias] = useState(null)
+  const [article, setArticle] = useState(null)
 
   // escreve a data por extenso:
   const hoje = new Date()
@@ -90,9 +91,15 @@ function App() {
           <Route
             exact
             path='/'
-            element={<Home loading={loading} noticias={noticias} />}
+            element={
+              <Home
+                setArticle={setArticle}
+                loading={loading}
+                noticias={noticias}
+              />
+            }
           />
-          <Route path='/article' element={<Article />} />
+          <Route path='/article' element={<Article article={article} />} />
         </Routes>
         <Footer />
       </div>

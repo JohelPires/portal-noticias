@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Principal({ noticias }) {
+function Principal({ noticias, setArticle }) {
   const restOfNews = noticias.articles.map((item, idx) => {
     if (idx > 0) {
       return (
@@ -38,9 +38,9 @@ function Principal({ noticias }) {
 
   const navigate = useNavigate()
 
-  function openArticle(article) {
-    console.log(article)
-    navigate('/article')
+  function openArticle(clickedArticle) {
+    console.log(clickedArticle.url)
+    window.open(clickedArticle.url, '_blank')
   }
 
   return (

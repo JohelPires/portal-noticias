@@ -3,7 +3,7 @@ import Destaques from '../components/Destaques'
 import Principal from '../components/Principal'
 import Tempo from '../components/Tempo'
 
-function Home({ noticias, loading }) {
+function Home({ noticias, loading, setArticle }) {
   return (
     <main className='main'>
       {loading ? <h2>loading</h2> : <Destaques noticias={noticias} />}
@@ -11,7 +11,7 @@ function Home({ noticias, loading }) {
       {loading ? (
         <h2>loading</h2>
       ) : noticias.totalResults ? (
-        <Principal noticias={noticias} />
+        <Principal setArticle={setArticle} noticias={noticias} />
       ) : (
         <h2>Nenhuma notícia encontrada</h2>
       )}

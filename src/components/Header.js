@@ -1,5 +1,6 @@
 import coinTicker from 'coin-ticker-binance'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header({ hojeStr }) {
   // console.clear()
@@ -29,7 +30,9 @@ function Header({ hojeStr }) {
 
   return (
     <header className='header'>
-      <h1>Portal Notícias</h1>
+      <Link to='/'>
+        <h1>Portal Notícias</h1>
+      </Link>
       <p className='subtitle'>Algumas frases de impacto aqui scrollando</p>
       <p>{hojeStr}</p>
     </header>
