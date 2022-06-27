@@ -8,7 +8,13 @@ function Home({ noticias, loading }) {
     <main className='main'>
       {loading ? <h2>loading</h2> : <Destaques noticias={noticias} />}
 
-      {loading ? <h2>loading</h2> : <Principal noticias={noticias} />}
+      {loading ? (
+        <h2>loading</h2>
+      ) : noticias.totalResults ? (
+        <Principal noticias={noticias} />
+      ) : (
+        <h2>Nenhuma notícia encontrada</h2>
+      )}
 
       <Tempo />
     </main>

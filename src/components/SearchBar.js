@@ -1,8 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
-function SearchBar() {
+function SearchBar({ noticias, setNoticias, setError, setLoading }) {
   const [search, setSearch] = useState('')
+  const [url, setUrl] = useState(
+    `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+  )
+
+  useEffect(() => {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          )
+        }
+        return response.json()
+      })
+      .then((actualData) => {
+        setNoticias(actualData)
+        setError(null)
+      })
+      .catch((err) => {
+        setError(err.message)
+        setNoticias(null)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [url])
+
   function handleSearch(e) {
     setSearch(e.target.value)
     console.log(search)
@@ -10,6 +37,8 @@ function SearchBar() {
 
   function updateNews() {
     console.log(search)
+    const novaUrl = `https://newsapi.org/v2/top-headlines?country=br&pageSize=10&q=${search}&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+    setUrl(novaUrl)
   }
 
   function handleEnter(e) {
@@ -17,6 +46,7 @@ function SearchBar() {
       updateNews()
     }
   }
+  console.log(noticias.totalResults)
   return (
     <div className='searchBar'>
       <input

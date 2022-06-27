@@ -34,6 +34,7 @@ function Principal({ noticias }) {
       )
     }
   })
+
   return (
     <div className='principal'>
       <div className='headline'>

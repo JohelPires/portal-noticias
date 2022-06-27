@@ -9,7 +9,7 @@ import Article from './pages/Article'
 import Home from './pages/Home'
 
 function App() {
-  console.clear()
+  // console.clear()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [noticias, setNoticias] = useState(null)
@@ -75,13 +75,16 @@ function App() {
       })
   }, [])
 
-  console.log(noticias)
-
   return (
     <BrowserRouter>
       <div className='App'>
         <Header hojeStr={hojeStr} />
-        <SearchBar />
+        <SearchBar
+          noticias={noticias}
+          setNoticias={setNoticias}
+          setError={setError}
+          setLoading={setLoading}
+        />
         {/* <div className='acoes'>nasdaq, bovespa, bitcoin, etc</div> */}
         <Routes>
           <Route
