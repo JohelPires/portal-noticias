@@ -14,6 +14,9 @@ function App() {
   const [error, setError] = useState(null)
   const [noticias, setNoticias] = useState(null)
   const [article, setArticle] = useState(null)
+  const [url, setUrl] = useState(
+    `https://newsapi.org/v2/top-headlines?country=br&pageSize=25&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+  )
 
   // escreve a data por extenso:
   const hoje = new Date()
@@ -52,9 +55,7 @@ function App() {
   // pega as notícias:
 
   useEffect(() => {
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=br&pageSize=25&apiKey=c0b36feefa3d4496af378b1abd24f58c`
-    )
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
@@ -74,7 +75,7 @@ function App() {
       .finally(() => {
         setLoading(false)
       })
-  }, [])
+  }, [url])
 
   return (
     <BrowserRouter>
@@ -82,7 +83,8 @@ function App() {
         <Header hojeStr={hojeStr} />
         <SearchBar
           // noticias={noticias}
-          setNoticias={setNoticias}
+          // setNoticias={setNoticias}
+          setUrl={setUrl}
           setError={setError}
           setLoading={setLoading}
         />
@@ -92,11 +94,7 @@ function App() {
             exact
             path='/'
             element={
-              <Home
-                setArticle={setArticle}
-                loading={loading}
-                noticias={noticias}
-              />
+              <Home setUrl={setUrl} loading={loading} noticias={noticias} />
             }
           />
           <Route path='/article' element={<Article article={article} />} />
