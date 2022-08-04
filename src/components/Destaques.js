@@ -7,6 +7,7 @@ function Destaques({ noticias, setUrl }) {
 
   function handleClick(item) {
     const novaUrl = `https://newsapi.org/v2/top-headlines?pageSize=25&sources=${item}&apiKey=c0b36feefa3d4496af378b1abd24f58c`
+    console.log(item, novaUrl, noticias)
     setUrl(novaUrl)
   }
 
