@@ -20,7 +20,7 @@ function Home({ noticias, loading, setUrl }) {
         <h2>Nenhuma notícia encontrada</h2>
       )}
 
-      <Tempo />
+      {/* <Tempo /> */}
     </main>
   )
 }

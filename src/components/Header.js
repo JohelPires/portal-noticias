@@ -32,7 +32,7 @@ function Header({ hojeStr }) {
     <header className='header'>
       <h1>Portal Notícias</h1>
 
-      <p className='subtitle'>Algumas frases de impacto aqui scrollando</p>
+      <p className='subtitle'>Múltiplas fontes de notícias em um só lugar</p>
       <p>{hojeStr}</p>
     </header>
   )
